@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/*function print_shape(...args)
+			{
+				let sides = args[0];
+				let fill = args[1];
+				let stroke = args[2];
+				
+				if (isNaN(sides))
+					sides = 5;
+				if (fill == null)
+					fill = '*'
+				if (stroke == null)
+					stroke = '/';
+					
+				let count = 1;
+				for (let i = 0; i < sides;i++)
+				{
+					for (let j = 0; j < count;j++)
+					{
+						if (j  == 0 || j == count - 1)
+							document.write(stroke);
+						else if (count == sides)
+							document.write(stroke);
+						else
+							document.write(fill);
+					}
+					count++;
+					document.write("<br/>");
+				}
+			}
+			print_shape(5, '-');*/
+			function sum (...args)
+			{
+				let s = 0;
+				for (let i of args)
+				{
+					if (i instanceof Array)
+					{
+						s += sum(...i);						
+					}else{
+						s += i;
+					}
+				}
+				return s;
+			}
+			let arr = [4,4,[[4]],[4]];
+			document.write(sum(5,3,2,arr));
+		</script>
+	</body>
+</html>
