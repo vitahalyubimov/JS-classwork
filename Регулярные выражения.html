@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript</title>
+	<meta charset="utf-8" />    
+</head>
+<body>
+    <script>
+        function print(text) {
+            document.writeln("<pre>");
+            document.writeln(text);
+            document.writeln("</pre>");
+        }
+        //var pattern = /\w+:\/\/\w+\b/g;
+        var pattern = /src=\".+?"/g;
+        var text = "&lt;img src=\"ljlkjl.jpeg\" alt=\"\"/&gt;\n&lt;img src=\"http://jkahfa\" alt=\"\"/&gt;&lt;img src=\"http://ajkfskljs\" alt=\"\"/&gt;&lt;img src=\"http://kajfkl\" alt=\"\"/&gt;";
+        var m = text.match(pattern);
+        print(m);
+        
+        pattern = /\.doc\b/g;
+        text = "&lt;a href=\"document01.doc\" title=\"Документ pdf\" >Скачать документ 01&lt;/a&gt;&lt;a href=\"doc.doc\"title=\"Документ pdf\" &gt;Скачать документ 02&lt;/a&gt;&lt;a href=\"http://docs.doc\" title=\"Документ pdf\" &gt;Скачать документ 03&lt;/a&gt;";
+        m = text.match(pattern);
+        document.write(text.replace(pattern, ".pdf"));
+        document.write("<br/>");
+        pattern = /&lt;.+?&gt;/g;
+        text = "&lt;div id=\"Translation\"&gt;&lt;p&gt;\"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.\"&lt;/p&gt;&lt;h3&gt;Розділ1.10.33 \"de Finibus Bonorum et Malorum\", написаного Цицероном у 45 році до н.е.&lt;/h3&gt;&lt;p&gt;\"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos \"&lt;/p&gt;&lt;/div&gt;";
+        document.write(text.replace(pattern,""));
+    </script>
+</body>
+</html>
